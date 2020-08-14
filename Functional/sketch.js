@@ -5,7 +5,7 @@ let snake= [];
 let head;
 let newHead;
 let food;
-
+let score = 0; 
 function setup() {
   createCanvas(400, 400);
   textSize(32);
@@ -53,6 +53,7 @@ function growSnake(){
   newHead = food.copy();
   snake.push(newHead);
   moveFood();
+  score +=1;
 }
 
 function turn(x,y){
@@ -67,7 +68,7 @@ function moveFood(){
 
 function snakeDie(){
   background(600,500,100);
-  text("End! you died",10, 200);
+  text("End! You scored "+score,10, 200);
   noLoop();
 }
 
